@@ -24,11 +24,13 @@ https://altair-yamanashi-kankou.com/
 
 ## 技術構成
 
+- **サーバー:** さくらインターネット
+- **ドメイン:** 独自ドメイン取得済み
 - HTML
 - CSS
 - JavaScript（今後追加予定）
 - 静的サイト
-
+  
 ---
 
 ## ディレクトリ構成
