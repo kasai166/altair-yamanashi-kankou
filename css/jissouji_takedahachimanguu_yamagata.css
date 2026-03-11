@@ -1,0 +1,293 @@
+@charset "utf-8";
+
+/* --- 1. 変数と基本設定 --- */
+:root {
+  --bg: #eef3ff;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --muted: #6b7280;
+  --radius: 12px;
+  --max-width: 1100px;
+}
+
+body {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 700;
+  background: var(--bg);
+  color: #222;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* --- 2. ヘッダーデザイン --- */
+header.site-header {
+  background: linear-gradient(90deg, var(--card), #f3f4f6);
+  padding: 18px 20px;
+  border-radius: 18px;
+  margin: 20px auto 0;
+  max-width: var(--max-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.brand .logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), #7c3aed);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+}
+
+nav.main-nav a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav.main-nav a:hover {
+  color: var(--accent) !important;
+}
+
+/* --- 3. 記事本文・見出しデザイン --- */
+main {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+article {
+  width: 100%;
+  max-width: 850px;
+}
+
+/* 巨大化した縦線見出し */
+article h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 70px 0 30px;
+  line-height: 1.3;
+  padding-left: 15px;
+  border-left: 8px solid #222; /* 青を排除した黒い太線 */
+  display: block;
+}
+
+article p, .lead {
+  font-size: 1.25rem;
+  line-height: 2.0;
+  margin-bottom: 1.5em;
+}
+
+.lead {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.08), rgba(99, 102, 241, 0.05));
+  padding: 20px 24px;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--accent);
+}
+
+/* --- 4. 画像ギャラリー（2枚横並び） --- */
+.goshuin-flex {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+  width: 100%;
+}
+
+.photo-item {
+  flex: 1;
+  max-width: 420px;
+}
+
+.photo-item img {
+  width: 100%;
+  height: auto; /* オリジナルの比率 1448*2119 を維持 */
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  /* 写真クリックなし：ホバー設定なし */
+}
+
+.photo-item figure {
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #444;
+  text-align: center;
+}
+
+/* --- 5. リンクのインタラクション（テキストのみ） --- */
+article a {
+  color: inherit !important;
+  text-decoration: underline;
+  transition: opacity 0.3s;
+}
+
+article a:hover {
+  opacity: 0.6;
+}
+
+/* 続きを読むボタン（ index用 ） */
+.read-more {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--muted);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  color: var(--accent) !important;
+  transform: translateX(5px);
+}
+
+/* --- 6. フッター（星空） --- */
+.site-footer {
+  position: relative;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  background: #0a0a2a;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .goshuin-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .photo-item {
+    width: 100%;
+    max-width: 100%;
+  }
+  article h2 {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* 1. コンテナ全体の並びを制御 */
+.container {
+  display: flex;
+  flex-direction: column; /* 要素を強制的に縦に並べる */
+  align-items: center;    /* 中央寄せ */
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 2. メインコンテンツを横に広がらせない */
+main.content {
+  width: 100%;
+  max-width: 850px;       /* 記事が読みやすい幅に制限 */
+  display: block;         /* 横並びを解除 */
+}
+
+/* 3. リード文（青い枠）が横に回り込むのを防ぐ */
+.hero, .lead {
+  display: block;
+  width: 100%;
+  clear: both;            /* 回り込みを完全に解除 */
+  margin-bottom: 40px;
+}
+
+/* 4. 見出しがリード文の横に入らないようにする */
+article h2 {
+  display: block;
+  width: 100%;
+  clear: both;
+  margin-top: 60px;
+  border-left: 8px solid #222;
+  padding-left: 15px;
+}
+
+/* 5. 画像がリンク切れ（小さいアイコン）になっている対策 */
+/* パスが ../pic/... になっているか、ファイル名が合っているか確認してください */
+.photo-item img {
+  width: 100%;
+  height: auto;
+  min-height: 200px;      /* 画像がない時でも場所を確保 */
+  background: #eee;       /* 読み込み中やエラー時にグレーで表示 */
+  display: block;
+}
+
+/* --- 4. フッター（コンパクト・左から流れる星空） --- */
+.site-footer {
+  position: relative;
+  background: #0a0a2a;
+  color: #fff;
+  padding: 30px 20px; /* 引き締まったサイズ */
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer-content { 
+  position: relative; 
+  z-index: 2; 
+}
+
+/* フッターリンクの設定：hoverで青く光る */
+.footer-links { margin-bottom: 8px; }
+.footer-links a { 
+  color: rgba(255, 255, 255, 0.7); 
+  margin: 0 12px; 
+  text-decoration: none; 
+  font-size: 0.8rem; 
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover { 
+  color: #2563eb; /* 青く光る */
+  text-decoration: underline;
+}
+
+.site-footer p {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* 星のアニメーション設定 */
+.star-field span {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes moveStars {
+  0% { transform: translateX(-20vw); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { transform: translateX(110vw); opacity: 0; }
+}
+
+/* 星の個別配置（端から端まで流れる） */
+.star-field span:nth-child(1) { width: 2px; height: 2px; top: 15%; animation: moveStars 8s infinite linear; }
+.star-field span:nth-child(2) { width: 3px; height: 3px; top: 35%; animation: moveStars 6s infinite linear 2s; }
+.star-field span:nth-child(3) { width: 1px; height: 1px; top: 60%; animation: moveStars 12s infinite linear 1s; }
+.star-field span:nth-child(4) { width: 2px; height: 2px; top: 25%; animation: moveStars 7s infinite linear 4s; }
+.star-field span:nth-child(5) { width: 1px; height: 1px; top: 80%; animation: moveStars 10s infinite linear 3s; }
+.star-field span:nth-child(6) { width: 2px; height: 2px; top: 10%; animation: moveStars 9s infinite linear 5s; }
+.star-field span:nth-child(7) { width: 1px; height: 1px; top: 45%; animation: moveStars 11s infinite linear 0.5s; }
+.star-field span:nth-child(8) { width: 2px; height: 2px; top: 70%; animation: moveStars 8s infinite linear 2.5s; }
+.star-field span:nth-child(9) { width: 1px; height: 1px; top: 90%; animation: moveStars 13s infinite linear 1.5s; }
+.star-field span:nth-child(10) { width: 3px; height: 3px; top: 5%; animation: moveStars 7s infinite linear 4.5s; }
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  article { padding: 30px 20px; }
+  header.site-header { padding: 15px 20px; }
+}

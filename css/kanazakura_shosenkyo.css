@@ -1,0 +1,387 @@
+@charset "utf-8";
+
+/* --- 変数定義（既存ベース＋金櫻神社カラー） --- */
+:root {
+  --bg: #eef3ff;
+  --card: #ffffff;
+  --accent: #d4af37; /* 金運・水晶のゴールド */
+  --accent-blue: #2563eb;
+  --muted: #6b7280;
+  --radius: 12px;
+  --max-width: 1100px;
+}
+
+/* --- 全体レイアウト（既存踏襲） --- */
+body {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: #222;
+  line-height: 2.0; /* 長文を読みやすく設定 */
+}
+
+main {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+article {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* --- ヘッダー --- */
+header.site-header {
+  background: linear-gradient(90deg, var(--card), #f3f4f6);
+  padding: 18px 20px;
+  border-radius: 18px;
+  margin: 20px auto 0;
+  max-width: var(--max-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.brand .logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), #b8860b);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.site-title a {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+  text-decoration: none;
+}
+
+/* --- リード文 --- */
+.lead {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.1), rgba(255, 255, 255, 0.5));
+  padding: 24px;
+  border-radius: var(--radius);
+  border-left: 5px solid var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* --- 見出しh2：左側の縦線で強調（既存踏襲） --- */
+article h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 70px 0 35px;
+  line-height: 1.3;
+  padding-left: 15px;
+  border-left: 10px solid var(--accent); /* 金色の線 */
+  display: block;
+  color: #111;
+}
+
+/* --- 本文とリスト --- */
+article p, article li {
+  font-size: 1.25rem;
+  margin-bottom: 1.5em;
+}
+
+article ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+article ul li::before {
+  content: "✦"; /* 水晶をイメージ */
+  color: var(--accent);
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* --- 写真ギャラリー --- */
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.photo-gallery div {
+  flex: 1;
+  min-width: 320px;
+  text-align: center;
+}
+
+.photo-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+figure {
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #444;
+}
+
+/* --- 御朱印横並び（武田神社スタイルの継承） --- */
+.goshuin-flex {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.photo-item {
+  flex: 1;
+  max-width: 420px;
+}
+
+.photo-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- フッター星空アニメーション（既存流用） --- */
+.site-footer {
+  position: relative;
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #0a0a2a;
+  color: #fff;
+  overflow: hidden;
+}
+
+.star-field span {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.8;
+  animation: moveStars linear infinite;
+}
+
+@keyframes moveStars {
+  0% { transform: translateX(0); opacity: 0.8; }
+  100% { transform: translateX(110vw); opacity: 0; }
+}
+
+/* --- 戻るボタン --- */
+.back {
+  display: inline-block;
+  margin: 10px;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #333;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 700;
+}
+
+/* --- レイアウトのベース --- */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+article {
+  background: var(--card);
+  padding: 60px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* --- リード文 --- */
+.lead {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.08), rgba(99, 102, 241, 0.05));
+  padding: 30px;
+  border-radius: var(--radius);
+  border-left: 5px solid var(--accent);
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+}
+
+/* --- 写真ギャラリー (2カラム) --- */
+.photo-gallery {
+  display: flex;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.photo-gallery > div {
+  flex: 1;
+}
+
+.photo-gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.photo-gallery figure {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* --- 御朱印 (横並び) --- */
+.goshuin-flex {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.photo-item {
+  width: 45%;
+}
+
+.photo-item img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.photo-item figure {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* --- ボタン・ナビゲーション --- */
+.back-nav {
+  text-align: center;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.back {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #222;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.back:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* --- スマホ対応 --- */
+@media (max-width: 768px) {
+  article {
+    padding: 30px 20px;
+  }
+  
+  .photo-gallery {
+    flex-direction: column;
+  }
+  
+  .goshuin-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .photo-item {
+    width: 100%;
+  }
+}
+
+/* --- 4. フッター（コンパクト・左から流れる星空） --- */
+.site-footer {
+  position: relative;
+  background: #0a0a2a;
+  color: #fff;
+  padding: 30px 20px; /* 引き締まったサイズ */
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer-content { 
+  position: relative; 
+  z-index: 2; 
+}
+
+/* フッターリンクの設定：hoverで青く光る */
+.footer-links { margin-bottom: 8px; }
+.footer-links a { 
+  color: rgba(255, 255, 255, 0.7); 
+  margin: 0 12px; 
+  text-decoration: none; 
+  font-size: 0.8rem; 
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover { 
+  color: #2563eb; /* 青く光る */
+  text-decoration: underline;
+}
+
+.site-footer p {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* 星のアニメーション設定 */
+.star-field span {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes moveStars {
+  0% { transform: translateX(-20vw); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { transform: translateX(110vw); opacity: 0; }
+}
+
+/* 星の個別配置（端から端まで流れる） */
+.star-field span:nth-child(1) { width: 2px; height: 2px; top: 15%; animation: moveStars 8s infinite linear; }
+.star-field span:nth-child(2) { width: 3px; height: 3px; top: 35%; animation: moveStars 6s infinite linear 2s; }
+.star-field span:nth-child(3) { width: 1px; height: 1px; top: 60%; animation: moveStars 12s infinite linear 1s; }
+.star-field span:nth-child(4) { width: 2px; height: 2px; top: 25%; animation: moveStars 7s infinite linear 4s; }
+.star-field span:nth-child(5) { width: 1px; height: 1px; top: 80%; animation: moveStars 10s infinite linear 3s; }
+.star-field span:nth-child(6) { width: 2px; height: 2px; top: 10%; animation: moveStars 9s infinite linear 5s; }
+.star-field span:nth-child(7) { width: 1px; height: 1px; top: 45%; animation: moveStars 11s infinite linear 0.5s; }
+.star-field span:nth-child(8) { width: 2px; height: 2px; top: 70%; animation: moveStars 8s infinite linear 2.5s; }
+.star-field span:nth-child(9) { width: 1px; height: 1px; top: 90%; animation: moveStars 13s infinite linear 1.5s; }
+.star-field span:nth-child(10) { width: 3px; height: 3px; top: 5%; animation: moveStars 7s infinite linear 4.5s; }
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  article { padding: 30px 20px; }
+  header.site-header { padding: 15px 20px; }
+}
