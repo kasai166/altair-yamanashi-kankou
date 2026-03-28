@@ -1,3 +1,16 @@
+:*, ::before, ::after {
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 0;
+  min-width: 0;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
 :root {
   --bg: #f7f7fb;
   --card: #ffffff;
@@ -14,6 +27,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Shippori Mincho', serif;
+  font-weight: 700;
   line-height: 1.8;
 }
 
@@ -63,23 +77,256 @@ body {
   color: #555;
 }
 
+.back-nav {
+  text-align: left;
+  margin-top: 48px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .back {
   display: inline-block;
-  margin: 1.2rem 0.6rem 0;
-  padding: 0.5rem 1.2rem;
+  padding: 10px 18px;
+  background: #fff;
+  color: #222;
+  border: 1px solid rgba(34,34,34,0.85);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+  transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+}
+
+.back:hover {
+  background: rgba(37,99,235,0.06);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+}
+
+/* 優先度を上げてサイト共通の .back を上書き（開発者ツールで見えている定義に対応） */
+.back-nav .back {
+  display: inline-block;
+  margin-top: 0;
+  padding: 0.5rem 1rem;
   border: 1px solid #444;
   border-radius: 4px;
   text-decoration: none;
   color: #222;
   font-size: 0.9rem;
+  background: #fff;
+  box-shadow: none;
+  font-weight: 700;
 }
 
-.back:hover {
+.back-nav .back:hover {
   background: #eee;
+  transform: none;
+  box-shadow: none;
+}
+/* 記事内リンクの見た目をページ単位で調整（必要に応じて上書き） */
+article a {
+  color: inherit !important;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
 }
 
 @media (max-width: 768px) {
   .photo-gallery img {
     height: 150px;
+  }
+}
+
+
+
+
+/* --- 1. 背景色と基本設定の統一（前回の続き） --- */
+body {
+  background: #eef3ff; /* 冬レポと統一 */
+  color: #222;
+  margin: 0;
+  padding: 0;
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+/* --- 2. 写真ギャラリーの修正（ここが重要） --- */
+.photo-gallery {
+  display: grid;
+  /* 1クリックで拡大しないため、少し大きめの横幅で並べる */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px; /* 写真同士の間隔 */
+  margin: 2rem 0;
+  align-items: end; /* 縦横混在時、下揃えにしてリズムを作る */
+}
+
+/* ギャラリー内の各写真コンテナ */
+.photo-gallery > div {
+  background: #fff; /* 写真の背景を白にして、縦横の差を吸収 */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* 軽い影で立体感を */
+  padding: 10px; /* 写真の周りに余白 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* 高さを揃える（キャプション位置統一のため） */
+}
+
+/* 画像自体の設定：切り抜きを廃止し、全表示 */
+.photo-gallery img {
+  width: 100%;
+  height: auto; /* 高さは自動（比率を維持） */
+  max-height: 400px; /* 縦写真が長くなりすぎないよう上限を設ける */
+  object-fit: contain; /* ★最重要：枠内に収め、切り抜かない */
+  border-radius: 4px; /* 画像自体の角を丸く */
+  margin-bottom: 10px; /* キャプションとの間隔 */
+}
+
+/* キャプション（figure）の設定 */
+.photo-gallery figure {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #555;
+  font-weight: 700;
+  margin-top: auto; /* 常に一番下に配置 */
+}
+
+/* --- 3. ナビゲーション（back-nav）の修正（前回の続き） --- */
+.back-nav {
+  margin-top: 60px; /* コンテンツとの間隔 */
+  padding-top: 30px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+/* ボタンの背景と見た目を他記事に寄せる */
+.back {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ffffff !important; /* 背景が透けないように白 */
+  color: #222 !important;
+  border: 1px solid rgba(34,34,34,0.3); /* 少し薄く */
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  font-weight: 700;
+}
+
+.back:hover {
+  background: #f3f4f6 !important; /* ホバー時は少しグレー */
+  transform: translateY(-2px);
+  border-color: rgba(34,34,34,0.5);
+}
+
+
+
+
+
+
+
+
+/* 基本の背景色を他記事(冬レポ)と統一 */
+body {
+  background: #eef3ff !important;
+}
+
+/* 写真コンテナ全体の余白 */
+.photo-container {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* 段ごとの間隔 */
+}
+
+/* グリッドの基本設定 */
+.photo-grid {
+  display: grid;
+  gap: 15px;
+  align-items: start;
+}
+
+/* 横3枚・縦3枚の段 */
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 下段 縦2枚の段 */
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px; /* 2枚のときは広がりすぎないよう制限 */
+  margin: 0 auto;
+}
+
+/* 各写真の枠 */
+.photo-grid > div {
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 画像の設定：切り抜かず全表示 */
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* 切り抜き禁止 */
+  border-radius: 4px;
+  background: #fafafa;
+}
+
+/* 縦画像用の高さ調整（ガタつき防止） */
+.tall-photos img {
+  aspect-ratio: 2 / 3; /* 縦横比を固定せず全表示したい場合は auto でも可 */
+  max-height: 450px;
+}
+
+.photo-grid figure {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #444;
+  font-weight: bold;
+}
+
+/* back-nav の修正：キモいマージンと背景を修正 */
+.back-nav {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.back {
+  background: #fff !important; 
+  border: 1px solid #ccc !important;
+  color: #333 !important;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.back:hover {
+  background: #f0f0f0 !important;
+  transform: translateY(-2px);
+}
+
+/* スマホ対応：横に並びきらない場合は1列にする */
+@media (max-width: 600px) {
+  .grid-3, .grid-2 {
+    grid-template-columns: 1fr;
   }
 }
