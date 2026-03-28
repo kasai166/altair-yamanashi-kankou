@@ -1,4 +1,4 @@
-:*, ::before, ::after {
+::before, ::after {
   box-sizing: border-box;
   border-style: solid;
   border-width: 0;
@@ -285,9 +285,9 @@ body {
   background: #fafafa;
 }
 
-/* 縦画像用の高さ調整（ガタつき防止） */
+
 .tall-photos img {
-  aspect-ratio: 2 / 3; /* 縦横比を固定せず全表示したい場合は auto でも可 */
+  aspect-ratio: 2 / 3; 
   max-height: 450px;
 }
 
@@ -299,7 +299,6 @@ body {
   font-weight: bold;
 }
 
-/* back-nav の修正：キモいマージンと背景を修正 */
 .back-nav {
   margin-top: 80px;
   padding-top: 40px;
