@@ -1,0 +1,343 @@
+:root {
+  --bg: #eef3ff;
+  --card: #ffffff;
+  --text: #222222;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --max-width: 1100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Shippori Mincho", serif;
+  font-weight: 700;
+  line-height: 1.9;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  background: linear-gradient(90deg, var(--card), #f3f4f6);
+  margin: 20px auto 0;
+  max-width: var(--max-width);
+  padding: 18px 20px;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), #7c3aed);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.site-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.site-title a {
+  text-decoration: none;
+}
+
+.site-sub {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.main-nav {
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+}
+
+main {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 20px 64px;
+}
+
+article {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.post-header h1 {
+  font-size: 2rem;
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 22px;
+}
+
+.lead {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.08), rgba(99, 102, 241, 0.05));
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 0 0 26px;
+  font-size: 1.08rem;
+}
+
+section {
+  margin-top: 42px;
+}
+
+article h2 {
+  font-size: 1.95rem;
+  font-weight: 900;
+  line-height: 1.35;
+  margin: 0 0 20px;
+  border-left: 6px solid #1f2937;
+  padding-left: 12px;
+}
+
+article h3 {
+  font-size: 1.35rem;
+  margin: 30px 0 14px;
+}
+
+article p,
+article li {
+  font-size: 1.12rem;
+}
+
+article ul {
+  padding-left: 1.2em;
+  margin: 0;
+}
+
+article li {
+  margin-bottom: 8px;
+}
+
+.single-photo {
+  margin: 20px 0 8px;
+}
+
+.post-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.single-photo figure,
+.photo-gallery-wide figure,
+.photo-gallery-2 figure {
+  margin: 8px 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.photo-gallery-wide,
+.photo-gallery-2 {
+  margin-top: 14px;
+}
+
+.photo-gallery-wide {
+  display: grid;
+  gap: 10px;
+}
+
+.photo-gallery-2 {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.photo-gallery-wide img,
+.photo-gallery-2 img {
+  width: 100%;
+  border-radius: 10px;
+  background: #f8fafc;
+  display: block;
+}
+
+.photo-gallery-wide img {
+  max-height: 520px;
+  object-fit: contain;
+}
+
+.photo-gallery-2 img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.back-nav {
+  margin-top: 58px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.back {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid #444444;
+  border-radius: 6px;
+  text-decoration: none;
+  background: #ffffff;
+  font-size: 0.92rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.back:hover {
+  background: #eeeeee;
+  transform: translateY(-2px);
+}
+
+.site-footer {
+  position: relative;
+  background: #0a0a2a;
+  color: #ffffff;
+  text-align: center;
+  padding: 28px 16px;
+  overflow: hidden;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-links {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+.footer-links a:hover {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.star-field span {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: moveStars linear infinite;
+}
+
+.star-field span:nth-child(1) { width: 2px; height: 2px; top: 15%; animation-duration: 8s; }
+.star-field span:nth-child(2) { width: 3px; height: 3px; top: 35%; animation-duration: 6s; animation-delay: 2s; }
+.star-field span:nth-child(3) { width: 1px; height: 1px; top: 60%; animation-duration: 11s; animation-delay: 1s; }
+.star-field span:nth-child(4) { width: 2px; height: 2px; top: 25%; animation-duration: 7s; animation-delay: 4s; }
+.star-field span:nth-child(5) { width: 1px; height: 1px; top: 80%; animation-duration: 9s; animation-delay: 3s; }
+.star-field span:nth-child(6) { width: 2px; height: 2px; top: 10%; animation-duration: 10s; animation-delay: 5s; }
+.star-field span:nth-child(7) { width: 1px; height: 1px; top: 45%; animation-duration: 12s; animation-delay: 0.5s; }
+.star-field span:nth-child(8) { width: 2px; height: 2px; top: 70%; animation-duration: 8s; animation-delay: 2.5s; }
+.star-field span:nth-child(9) { width: 1px; height: 1px; top: 90%; animation-duration: 13s; animation-delay: 1.5s; }
+.star-field span:nth-child(10) { width: 3px; height: 3px; top: 5%; animation-duration: 7s; animation-delay: 4.5s; }
+
+@keyframes moveStars {
+  0% {
+    transform: translateX(-20vw);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(110vw);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    border-radius: 0;
+    margin-top: 0;
+  }
+
+  .site-sub {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .post-header h1 {
+    font-size: 1.6rem;
+  }
+
+  article h2 {
+    font-size: 1.5rem;
+  }
+
+  article p,
+  article li,
+  .lead {
+    font-size: 1rem;
+  }
+
+  .photo-gallery-2 {
+    grid-template-columns: 1fr;
+  }
+}
