@@ -257,6 +257,29 @@
   padding-left: 12px;
 }
 
+.list-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.list-controls label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.list-controls select {
+  min-width: 140px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 7px 10px;
+  font: inherit;
+}
+
 /* 一覧リスト */
 .archive-list {
   list-style: none;
@@ -267,6 +290,10 @@
 .archive-list li {
   padding: 14px 8px;
   border-bottom: 1px solid #e5e7eb;
+}
+
+.archive-list .empty-item {
+  color: #6b7280;
 }
 
 .archive-list li:last-child {

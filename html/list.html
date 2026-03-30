@@ -38,32 +38,46 @@
 
 <main class="post-list">
     <h1>投稿一覧</h1>
+    <div class="list-controls">
+        <label>
+            カテゴリ
+            <select id="categoryFilter">
+                <option value="all">すべて</option>
+            </select>
+        </label>
+        <label>
+            並び順
+            <select id="sortOrder">
+                <option value="new">新しい順</option>
+                <option value="old">古い順</option>
+            </select>
+        </label>
+    </div>
 
-    <ul class="archive-list">
-        <li>
+    <ul class="archive-list" id="archiveList">
+        <li data-visit-date="2026-03-27" data-categories="寺社,桜,花見,山梨" data-title="【2026年春】實相寺・神代桜満開レポ！花見、混雑、駐車場、アクセス徹底ガイド" data-path="../html/jissouji_2026_spring.html">
             <a href="../html/jissouji_2026_spring.html">
-                ・【2026年春】實相寺・神代桜満開レポ！花見、混雑、駐車場、アクセス徹底ガイド(投稿日：2026/3/27)
+                ・【2026年春】實相寺・神代桜満開レポ！花見、混雑、駐車場、アクセス徹底ガイド(訪問日：2026/03/27)
             </a>
         </li>
-
-        <li>
+        <li data-visit-date="2026-01-03" data-categories="神社,仏閣,初詣,山梨" data-title="【2026年初詣】實相寺・武田八幡宮・山縣神社。三が日の混雑・駐車場・限定御朱印を徹底レポ！" data-path="../html/jissouji_takedahachimanguu_yamagata.html">
             <a href="../html/jissouji_takedahachimanguu_yamagata.html">
-                ・【2026年初詣】實相寺・武田八幡宮・山縣神社。三が日の混雑・駐車場・限定御朱印を徹底レポ！(投稿日：2026/2/10)
+                ・【2026年初詣】實相寺・武田八幡宮・山縣神社。三が日の混雑・駐車場・限定御朱印を徹底レポ！(訪問日：2026/01/03)
             </a>
         </li>
-        <li>
+        <li data-visit-date="2026-01-04" data-categories="神社,昇仙峡,山梨グルメ,初詣,御朱印" data-title="【2026山梨初詣】金櫻神社の御朱印帳と冬の昇仙峡。1月4日の混雑状況レポート" data-path="../html/kanazakura_shosenkyo.html">
             <a href="../html/kanazakura_shosenkyo.html">
-                ・【2026山梨初詣】金櫻神社の御朱印帳と冬の昇仙峡。1月4日の混雑状況レポート(投稿日：2026/2/10)
+                ・【2026山梨初詣】金櫻神社の御朱印帳と冬の昇仙峡。1月4日の混雑状況レポート(訪問日：2026/01/04)
             </a>
         </li>
-        <li>
+        <li data-visit-date="2026-01-01" data-categories="神社,初詣,元旦,御朱印" data-title="【2026山梨初詣】武田神社は徒歩30分!? 稲積神社の訪問記録と混雑状態のリアルレポート！" data-path="../html/takeda_inazumi_gantan.html">
             <a href="../html/takeda_inazumi_gantan.html">
-                ・【2026山梨初詣】武田神社は徒歩30分!? 稲積神社の訪問記録と混雑状態のリアルレポート！(投稿日：2026/1/2)
+                ・【2026山梨初詣】武田神社は徒歩30分!? 稲積神社の訪問記録と混雑状態のリアルレポート！(訪問日：2026/01/01)
             </a>
         </li>
-        <li>
+        <li data-visit-date="2025-11-20" data-categories="神社,観光,お寺,紅葉" data-title="南伊奈ヶ湖の紅葉" data-path="../html/inagako_homi_kuonji.html">
             <a href="../html/inagako_homi_kuonji.html">
-                ・南伊奈ヶ湖の紅葉（投稿日：2025/11/30）
+                ・南伊奈ヶ湖→高尾穂見神社→身延山久遠寺へ紅葉を見に行ってきました(訪問日：2025/11/20)
             </a>
         </li>
     </ul>
@@ -83,5 +97,6 @@
         </div>
     </footer>
 
+<script src="../js/list.js" defer></script>
 </body>
 </html>
