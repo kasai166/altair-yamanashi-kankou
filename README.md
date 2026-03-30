@@ -48,10 +48,10 @@ https://altair-yamanashi-kankou.com/
 - Google Search Console 使用
 - Google Analytics 使用
 
-公開後3ヶ月時点
+公開後4ヶ月時点
 
-- 検索表示数：約380 / 月
-- 平均掲載順位：約7.5位
+- 検索表示数：約500 / 月
+- 平均掲載順位：約8.1位
 
 ---
 
