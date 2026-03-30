@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.altair-yamanashi-kankou.com/index.html</loc>
-    <lastmod>2026-02-10</lastmod>
-  </url>
-  <url>
-    <loc>https://www.altair-yamanashi-kankou.com/html/inagako_homi_kuonji.html</loc>
-    <lastmod>2026-02-10</lastmod>
-  <url>
-    <loc>https://www.altair-yamanashi-kankou.com/html/jissouji_2026_spring.html</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
+    <lastmod>2026-03-31</lastmod>
   </url>
   <url>
     <loc>https://www.altair-yamanashi-kankou.com/html/list.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.altair-yamanashi-kankou.com/html/inagako_homi_kuonji.html</loc>
+    <lastmod>2025-12-03</lastmod>
   </url>
   <url>
     <loc>https://www.altair-yamanashi-kankou.com/html/takeda_inazumi_gantan.html</loc>
+    <lastmod>2026-02-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.altair-yamanashi-kankou.com/html/jissouji_takedahachimanguu_yamagata.html</loc>
     <lastmod>2026-02-10</lastmod>
   </url>
   <url>
-    <loc>https://altair-yamanashi-kankou.com/html/jissouji_takedahachimanguu_yamagata.html</loc>
+    <loc>https://www.altair-yamanashi-kankou.com/html/kanazakura_shosenkyo.html</loc>
     <lastmod>2026-02-10</lastmod>
   </url>
   <url>
-    <loc>https://altair-yamanashi-kankou.com/html/kanazakura_shosenkyo.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <loc>https://www.altair-yamanashi-kankou.com/html/jissouji_2026_spring.html</loc>
+    <lastmod>2026-03-27</lastmod>
   </url>
 </urlset>

@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /html/inagako_homi.html
 Allow: /
 
 Sitemap: https://www.altair-yamanashi-kankou.com/sitemap.xml
