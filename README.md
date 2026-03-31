@@ -51,6 +51,7 @@ https://altair-yamanashi-kankou.com/
 公開後4ヶ月時点
 
 - 検索表示数：約500 / 月
+- 平均CTR：5~10%
 - 平均掲載順位：約8.1位
 
 ---
