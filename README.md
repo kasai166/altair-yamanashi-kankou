@@ -37,7 +37,7 @@ https://altair-yamanashi-kankou.com/
 /
 ├ index.html          # トップページ
 ├ css/                # スタイルシート
-├ js/                 # JavaScript（将来機能追加予定）
+├ js/                 # 記事リストのソート
 ├ img/                # 画像
 └ html/               # 各記事ページ
 
@@ -50,9 +50,9 @@ https://altair-yamanashi-kankou.com/
 
 公開後4ヶ月時点
 
-- 検索表示数：約500 / 月
+- 検索表示数：約800 / 月
 - 平均CTR：5~10%
-- 平均掲載順位：約8.1位
+- 平均掲載順位：約6.6位
 
 ---
 
