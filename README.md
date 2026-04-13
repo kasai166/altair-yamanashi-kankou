@@ -36,10 +36,14 @@ https://altair-yamanashi-kankou.com/
 ## ディレクトリ構成
 /
 ├ index.html          # トップページ
-├ css/                # スタイルシート
-├ js/                 # 記事リストのソート
-├ img/                # 画像
-└ html/               # 各記事ページ
+
+　├ css/                # スタイルシート
+ 
+　├ js/                 # 記事リストのソート
+ 
+　├ img/                # 画像
+ 
+　└ html/               # 各記事ページ
 
 ---
 
