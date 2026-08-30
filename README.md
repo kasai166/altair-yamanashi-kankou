@@ -28,7 +28,7 @@ https://altair-yamanashi-kankou.com/
 - **ドメイン:** 独自ドメイン取得済み
 - HTML
 - CSS
-- JavaScript（今後追加予定）
+- JavaScript
 - 静的サイト
   
 ---
